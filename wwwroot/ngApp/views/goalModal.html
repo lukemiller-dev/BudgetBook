@@ -1,0 +1,19 @@
+﻿<div class="modal-header">
+    <center>
+        <h3>New Goal</h3>
+    </center>
+</div>
+
+<div class="modalInputs">
+    <div class="modal-body">
+        <center>
+            <form ng-submit="modal.addGoal(goal)">
+                <input placeholder="Name" ng-model="goal.name" class="loginInput" />
+                <br />
+                <input placeholder="Amount" ng-model="goal.amount" class="loginInput" />
+                <br />
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </center>
+    </div>
+</div>

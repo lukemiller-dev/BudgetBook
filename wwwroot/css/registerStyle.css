@@ -1,0 +1,85 @@
+﻿body {
+}
+
+.main {
+    background-color: #fff;   
+}
+
+.localLogin {
+    text-align: center;
+   
+}
+
+.socialLogin {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.loginBtn {
+    margin-top: 10px;
+    background-color: #80bfff;
+    height: 40px;
+    width: 350px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.loginInput {
+    border: 1px solid #80bfff;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 350px;
+    font-size: 18px;
+}
+
+.fbSignIn {
+    background-color: #3b5998;
+    height: 40px;
+    width: 350px;
+    border-radius: 5px;
+    color: white;
+    border: none;   
+    text-align: left;   
+}
+
+.googleSignIn {
+    background-color: #db4437;
+    height: 40px;
+    width: 350px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#LogInIcon {
+    color: #fff;
+    margin-left: 10px;
+    padding: 0;
+    position: absolute;
+}
+
+
+
+.loginSpan {
+    margin-left: 45px;
+    font-size: 16px;   
+}
+
+.modalH {
+    font-size: 18px;
+}
+
+#removeGlyph {
+    margin-left: 550px;
+    color: gray;
+}
+
+#removeGlyph:hover{
+    cursor: pointer;
+}

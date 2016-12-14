@@ -1,0 +1,44 @@
+﻿body {
+}
+
+#navIcon {
+    color: #80bfff;
+    padding-top: 10px;
+    margin-right: 5px;
+    margin-left: 20px;
+}
+
+#mainNav {  
+    height: 60px;   
+}
+ .navLogin {
+        height: 30px;
+        width: 100px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        border: 2px solid #80bfff;
+        margin-top: 10px;
+    }
+
+
+#rightNav {
+    text-align: right;
+    font-size: 18px;
+    color: slategray;
+    margin-right: 15px;
+}
+
+.navTable td {
+    padding-top: 25px;
+    margin-right: 10px;
+}
+
+#navTitle {
+    color: slategray;
+    font-size: 21px;  
+    text-decoration: none; 
+}
+
+#userNameNav {
+    padding-top: 13px;
+}

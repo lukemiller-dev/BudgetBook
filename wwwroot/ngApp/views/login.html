@@ -1,0 +1,44 @@
+
+<div class="modal-body">
+    <center>
+
+
+        <fieldset>
+            <i id="removeGlyph" class="glyphicon glyphicon-remove" ng-click="modal.closeModal()"></i>
+            <p class="modalH">Local Login</p>
+
+            <ul>
+                <li ng-repeat="error in controller.validationMessages">
+                    {{error}}
+                </li>
+            </ul>
+
+            <form ng-controller="LoginController as controller" ng-submit="controller.login()">
+                <div>
+                    <input class="loginInput" placeholder="Email" ng-model="controller.loginUser.email" />
+                </div>
+                <div>
+                    <input class="loginInput" placeholder="Password" ng-model="controller.loginUser.password" />
+                </div>
+
+                <input ng-click="modal.closeModal()" class="loginBtn" type="submit" value="Log In"/>
+            </form>
+
+        </fieldset>
+        <fieldset>
+            <h4>or</h4>
+            <hr />
+            <button class="fbSignIn"><i id="LogInIcon" class="fa fa-facebook fa-2x" aria-hidden="true"></i><span class="loginSpan">Continue with Facebook</span></button>
+            <br />
+            <button class="googleSignIn"><i id="LogInicon" class="fa fa-google fa-2x" aria-hidden="true"></i><span class="loginSpan">Continue with Google</span></button>
+            <ul>
+                <li ng-repeat="externalLogin in account.externalLogins">
+                    <a target="_self" href="/api/account/ExternalLogin?provider={{externalLogin.authenticationScheme}}&returnUrl=/">{{externalLogin.displayName}}</a>
+                </li>
+            </ul>
+
+        </fieldset>
+
+        <p>Don't have an account? <a ng-click="modal.closeModal()" href="/register">Sign Up >></a></p>
+    </center>
+</div>

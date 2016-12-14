@@ -1,0 +1,114 @@
+﻿
+    <div class="mainAccountMain">
+        
+            <div class="container-fluid">
+                <div class="overallIncome">
+                    <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+
+
+                            <table class="overallBudget">
+                                <tr>
+                                    <td><p class="overallTitle">Total</p></td>
+                                    <td><p class="accountLeftOver">${{controller.appUserIncome.currentTotal}}<span id="accountToGo">left</span></p></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td><div class="accountOverallDiv"><p class="overallP">${{controller.appUserIncome.spent}} of ${{controller.appUserIncome.monthlyIncomeFixed}}</p></div></td>
+                                </tr>
+                                </table>
+                                <table>
+                                <tr>
+                                    <td><input ng-model="controller.monthlyIncome" class="newIncome" placeholder="New Income" type="number" /><button ng-click="controller.addIncome(income)" class="newIncomeBtn"><i class="fa fa-plus" aria-hidden="true" id="incomeIcons"></i></button></td>
+                                    <td><input ng-model="controller.eIncome" class="editIncome" placeholder="Edit Income" type="number" /><button class="newIncomeBtn"><i class="fa fa-pencil" id="incomeIcons" aria-hidden="true"></i></button></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                
+                
+                        
+                    <div class="mainCategories">
+                        <div class="container">
+                        <div class="row">
+                        <div class="col-md-6">
+                       
+                            <button id="newBudgetBtn" ng-click="controller.openModal()"><p id="addNew"><i id="addBudgetIcon" class="fa fa-plus fa-lg" ng-click="controller.openModal()" aria-hidden="true"></i>New Category</p></button>
+
+                        <div ng-repeat="budget in controller.maBudgets" class="mainBudgets">
+                            <table class="budgetTables">
+                                <tr>
+                                    <td><p class="budgetTitle">{{budget.name}}</p></td>
+                                    <td><p class="mainDivLeftOver">${{budget.remaining}}<span id="mainDivToGo">left</span></p></td>
+                                    <td><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td><div class="accountBars"><p class="progressP">${{budget.current}} of ${{budget.amount}}</p></div></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1" ng-click="controller.addToCurrent(budget.id)"></i><input class="addNminusFields" placeholder="Edit Current" ng-model="controller.current" />
+                                    </td>
+                                       
+                                </tr>
+                            </table>
+                            </div>
+                        </div>
+                   
+
+                    <div class="col-md-6">
+                        
+                        <button id="newGoalBtn" ng-click="controller.openGoalModal()"><p id="newGoalP"><i id="addBudgetIcon" class="fa fa-plus fa-large" ng-click="controller.openGoalModal()"></i>New Goal</p></button>                           
+                        
+                        <div ng-repeat="goal in controller.goals" class="mainGoals">
+                            <table class="goalsTable">
+                                <tr>
+                                    <td><p class="goalTitle">{{goal.name}}</p></td>
+                                    <td><p class="goalToGo">${{goal.remaining}} <span id="goalTogoP">to go</span></p></td>
+                                    <td><i id="goalIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteGoal(goal.id)"></i></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td><div class="progressBars"><p class="progressP">${{goal.current}} of ${{goal.amount}}</p></div></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <i id="addToGoal" ng-click="controller.addToGoal(goal.id)" class="fa fa-plus" aria-hidden="true"></i>
+                                        <input placeholder="Edit Current" ng-model="controller.gCurrent" class="goalFields" />
+                                    </td>
+                                </tr>                            
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+       
+                
+
+   
+               
+        
+       
+    
+
+
+
+   
+    

@@ -1,0 +1,57 @@
+
+<div class="form-group">
+    <div class="row">
+
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="socialLogin">
+                <fieldset>
+                    <h4>Login with a Social Provider</h4>
+
+                    <button class="fbSignIn"><i id="LogInIcon" class="fa fa-facebook fa-2x" aria-hidden="true"></i><span class="loginSpan">Sign Up with Facebook</span></button>
+                    <br />
+                    <button class="googleSignIn"><i id="LogInIcon" class="fa fa-google fa-2x" aria-hidden="true"></i><span class="loginSpan">Sign Up with Google</span></button>
+                    <ul>
+                        <li ng-repeat="externalLogin in account.externalLogins">
+                            <a target="_self" href="{{externalLogin.url}}">{{externalLogin.name}}</a>
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+
+            <div class="localLogin">
+                <fieldset>
+
+                    <h4>Register Locally</h4>
+                    <ul>
+                        <li ng-repeat="message in controller.validationMessages">
+                            {{message}}
+                        </li>
+                    </ul>
+
+                    <form class="form-inline" ng-submit="controller.register()">
+                        <div>
+
+                            <input class="loginInput" placeholder="Email" ng-model="controller.registerUser.email" />
+                        </div>
+                        <div>
+
+                            <input class="loginInput" placeholder="Password" ng-model="controller.registerUser.password" />
+                        </div>
+
+                        <div>
+                            <input class="loginInput" placeholder="Confirm Password" ng-model="controller.registerUser.confirmPassword" />
+                        </div>
+                        <button type="submit" class="loginBtn">Register</button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+
+    </div>
+
+</div>
