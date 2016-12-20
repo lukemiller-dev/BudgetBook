@@ -13,6 +13,7 @@
 /// <reference path="../bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="../bower_components/zingchart/client/zingchart.min.js" />
 /// <reference path="../bower_components/zingchart-angularjs/src/zingchart-angularjs.js" />
+/// <reference path="../personalwebsite/src/PersonalWebsite/wwwroot/_references.js" />
 /// <reference path="ngapp/app.js" />
 /// <reference path="ngapp/controllers/accountcontroller.js" />
 /// <reference path="ngapp/controllers/controllers.js" />

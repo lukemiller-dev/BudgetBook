@@ -94,13 +94,12 @@
                                 <button id="newBudgetBtn"><p id="addNew"><i id="addBudgetIcon" class="fa fa-plus fa-lg" aria-hidden="true"></i>New Category</p></button>
 
                                 <div class="mainBudgets">
-                                    <table class="budgetTables">
-                                        <tr>
-                                            <td><p class="budgetTitle">Groceries</p></td>
-                                            <td><p class="mainDivLeftOver">$360<span id="mainDivToGo">left</span></p></td>
-                                            <td><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></td>
-                                        </tr>
-                                    </table>
+                                    <ul class="budgetLists">
+                                        
+                                            <li><p class="budgetTitle">Groceries</p></li>
+                                            <li><p class="mainDivLeftOver">$360<span id="mainDivToGo">left</span></p></li>
+                                            <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>                                        
+                                    </ul>
                                     <table>
                                         <tr>
                                             <td>
@@ -123,13 +122,13 @@
                                 <button id="newGoalBtn"><p id="newGoalP"><i id="addBudgetIcon" class="fa fa-plus fa-large"></i>New Goal</p></button>
 
                                 <div class="mainGoals">
-                                    <table class="goalsTable">
-                                        <tr>
-                                            <td><p class="goalTitle">Ski Trip</p></td>
-                                            <td><p class="goalToGo">$400 <span id="goalTogoP">to go</span></p></td>
-                                            <td><i id="goalIconDelete" class="fa fa-times" aria-hidden="true"></i></td>
-                                        </tr>
-                                    </table>
+                                    <ul class="budgetLists">
+                                        
+                                            <li><p class="goalTitle">Ski Trip</p></li>
+                                            <li><p class="goalToGo">$400 <span id="goalTogoP">to go</span></p></li>
+                                            <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true"></i></li>
+                                        
+                                    </ul>
                                     <table>
                                         <tr>
                                             <td>
@@ -153,13 +152,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mainBudgets">
-                                <table class="budgetTables">
-                                    <tr>
-                                        <td><p class="budgetTitle">Gas</p></td>
-                                        <td><p class="mainDivLeftOver">$93<span id="mainDivToGo">left</span></p></td>
-                                        <td><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></td>
-                                    </tr>
-                                </table>
+                                <ul class="budgetLists">
+                                    
+                                        <li class="budgetTitle">Gas</li>
+                                        <li class="mainDivLeftOver">$93<span id="mainDivToGo">left</span></p></li>
+                                        <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>
+                                </ul>
                                 <table>
                                     <tr>
                                         <td>
@@ -179,13 +177,12 @@
 
                             <div class="col-md-6">
                                 <div class="mainGoals">
-                                    <table class="goalsTable">
-                                        <tr>
-                                            <td><p class="goalTitle">Car</p></td>
-                                            <td><p class="goalToGo">$4500 <span id="goalTogoP">to go</span></p></td>
-                                            <td><i id="goalIconDelete" class="fa fa-times" aria-hidden="true"></i></td>
-                                        </tr>
-                                    </table>
+                                    <ul class="budgetLists">
+                                        
+                                            <li><p class="goalTitle">Car</p></li>
+                                            <li><p class="goalToGo">$4500 <span id="goalTogoP">to go</span></p></li>
+                                            <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true"></i></li>                                        
+                                    </ul>
                                     <table>
                                         <tr>
                                             <td>
@@ -208,13 +205,10 @@
                         <div class="row">
                             <div class="col-md-6">
                         <div class="mainBudgets">
-                            <table class="budgetTables">
-                                <tr>
-                                    <td><p class="budgetTitle">Weekends</p></td>
-                                    <td><p class="mainDivLeftOver">$360<span id="mainDivToGo">left</span></p></td>
-                                    <td><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></td>
-                                </tr>
-                            </table>
+                            <ul class="budgetLists">                              
+                                    <li><p class="budgetTitle">Weekends</p></li>
+                                    <li><p class="mainDivLeftOver">$360<span id="mainDivToGo">left</span></p></li>
+                                    <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>    </ul>
                             <table>
                                 <tr>
                                     <td>
