@@ -2,12 +2,42 @@ namespace newBudgetBook.Controllers {
 
     export class HomeController {
         public budgets;
+        public sideIcon = true;
+       
         constructor(public $http: ng.IHttpService, public $state: ng.ui.IStateService, public $uibModal: ng.ui.bootstrap.IModalService, public ModalService: newBudgetBook.Services.ModalService) {
             $http.get('api/budgets').then((res) => {
                 this.budgets = res.data;
             })
+            
+        }
+       
+        public openNav() {
+            this.sideIcon = false;
+            console.log("Test");                     
+            document.getElementById("sidenav").style.width = "300px"; 
+            document.body.style.marginRight = "300px";  
+            document.getElementById("homeNavBar").style.marginRight = "300px";
+            document.body.style.marginLeft = "-300px"
+            //document.getElementById("homeNavBar").style.marginLeft = "-70";            
+    }
+
+        public closeNav() {
+            this.sideIcon = true;
+            document.getElementById("sidenav").style.width = "0";  
+            document.body.style.marginRight = "0";  
+            document.body.style.marginLeft = "0";
+            document.getElementById("homeNavBar").style.marginRight = "0";
+        }
+
+       
+
+        public toTop() {
+            window.scroll(0, 0);
         }
     }
+
+    
+    
 
     export class ModalController {
         public budgets;
@@ -39,6 +69,7 @@ namespace newBudgetBook.Controllers {
         public goals;
         public gCurrent;
         public eIncome;
+        public menuOption = true;
         constructor(public $http: ng.IHttpService, public $state: ng.ui.IStateService, public $uibModal: ng.ui.bootstrap.IModalService, public ModalService: newBudgetBook.Services.ModalService, public $stateParams: ng.ui.IStateParamsService) {
             $http.get('api/budgets').then((res) => {
                 this.maBudgets = res.data;
@@ -96,9 +127,22 @@ namespace newBudgetBook.Controllers {
             this.ModalService.openModal("goalModal.html");
         }
 
+        public openCollapse() {  
+            this.menuOption = false; 
+            document.getElementById('hamburger').style.width= "50%";     
+        
+     
+        }
+
+        public closeCollapse() {
+            this.menuOption = true;
+            document.getElementById('hamburger').style.width = "0";
+           
+        }
+
 
         //ProgressBar Methods
-       
+     
 
         //goal methods
 

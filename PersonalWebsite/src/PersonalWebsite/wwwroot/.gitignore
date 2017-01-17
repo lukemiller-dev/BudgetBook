@@ -1,6 +1,0 @@
-lib/
-
-*.js
-*.js.map
-
-!_references.js

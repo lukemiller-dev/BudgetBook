@@ -1,265 +1,166 @@
 
-<div class="header">
-    <center>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-1">
 
-                </div>
-                <div class="col-md-10">
-                    <h1>Helping you put a leash on your budget</h1>
-                    <h3>We'll help guide you towards your finnacial goals one day at a time.</h3>
-                    <!--Should be a simple fix(routing)-->
-                    <button href="/register" class="headerBtn">Get Started</button>
-                </div>
-                <div class="col-md-1">
+    <div id="main">
+
+
+      
+        <div class="header">
+          
+            <div class="homeLayer">
+                <nav id="homeNavBar" class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" ng-show="controller.sideIcon" ng-click="controller.openNav()" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="/"><img height="125" id="homeNavLogo" src="http://i.imgur.com/JMev8ED.png" /></a>
+
+                            <!--<a ng-show="controller.sideIcon" id="homeNavTitle" href="/">BudgetBook</a>-->
+
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a id="userNameAccount" href="#" ng-show="account.isLoggedIn()">{{account.getUserName()}}</a></li>
+                                <li><a id="navLogout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
+
+
+                                <li ng-show="!account.isLoggedIn()" class="homeNavLi"><button ng-show="controller.sideIcon" id="homeLogin" ng-click="account.openModal()"><i id="navIconsSmall" class="fa fa-lock" aria-hidden="true"></i>Login</button></li>
+                                <li ng-show="controller.sideIcon"><button ng-show="!account.isLoggedIn()" id="homeRegister" class="signUpBtn" onclick="location.href='/register'" type="button"><i id="navIconsSmall" class="fa fa-user" aria-hidden="true"></i>Sign Up</button></li>
+                                <li><i id="collapseMenu" type="button" class="fa fa-bars" aria-hidden="true" ng-show="controller.sideIcon" ng-click="controller.openNav()"></i></li>
+                            </ul>
+                         
+                        </div>
+                    </div>
+                </nav>
+                <div class="container">
+
+
+
+                   
+
+
+                    <div id="sidenav" class="sidenav">
+
+                        <img src="http://i.imgur.com/71UPSMt.png" height="22" id="closeOption" ng-click="controller.closeNav()" class="fa fa-times" aria-hidden="true" />
+
+                        <div id="userNameDiv" ng-show="account.isLoggedIn()">
+                            <p id="userName" ng-show="account.isLoggedIn()">{{account.getUserName()}}</p>
+                            <p>{{account.validationMessages}}</p>
+                        </div>
+
+
+
+
+                        <button class="sideLoginBtn" ng-click="account.openModal()" ng-show="!account.isLoggedIn()">Login</button>
+                        <a ng-show="!account.isLoggedIn()" href="/register">Register</a>
+                        <a href="/mainAccount" ng-show="account.isLoggedIn()">Account</a>
+                        <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+
+
+
+                    </div>
+                    <!-- Use any element to open the sidenav -->
+
+                    <center>
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+
+                                <!--<img data-aos="fade-down" data-aos-duration="1000" height="350" src="http://i.imgur.com/JMev8ED.png" id="mainLogo" />-->
+                                <h1>BudgetBook</h1>
+
+                                <h2 data-aos="fade-down" data-aos-duration="1000">Helping you put a leash on your budget</h2>
+
+                                <button data-aos="fade-down" data-aos-duration="1000" onclick="location.href='/register'" class="headerBtn">Get Started</button>
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <td><img data-aos="fade-left" data-aos-duration="2000" class="compImg" src="http://i.imgur.com/xpKiv38.png" /></td>
+                                            <td><img data-aos="fade-up" data-aos-duration="2000" class="phoneImg" src="http://i.imgur.com/60WCUzs.png" /></td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                        </div>
+
+                    </center>
 
                 </div>
             </div>
         </div>
-    </center>
-</div>
-<div class="midSec">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <i class="glyphicon glyphicon-piggy-bank" id="iMoveR"></i>
-            </div>
-            <div class="col-md-4">
-                <i class="glyphicon glyphicon-hourglass"></i>
-            </div>
-            <div class="col-md-4">
-                <i class="glyphicon glyphicon-folder-open" id="iMoveL"></i>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <p class="pull-right" id="midSecPR">Create an organized plan to save money and watch your savings grow.</p>
-            </div>
-            <div class="col-md-4">
-                <p id="midSecPC">See how long it will take to save up for the things you want. BudgetBook will take a certain percentage out of your paycheck to reach your timeline goal so you dont have to.</p>
-            </div>
-            <div class="col-md-4">
-                <p id="midSecPL">Manage your monthly bills and payments better while keeping track of your weekly spendings.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
- <div class="templateHome">
-        
-            <div class="container-fluid">
-                <div class="overallIncome">
-                    <div class="container">
+
+
+
+        <div class="midSec">
+            <div class="midsecLayer">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h3 data-aos="fade-in">Organize and Save Smarter</h3>
+                        </div>
+                    </div>
                     <div class="row">
 
-                        <div class="col-md-12">
-                            <table class="overallBudget">
-                                <tr>
-                                    <td><p class="overallTitle">Total</p></td>
-                                    <td><p class="accountLeftOver">$1,458<span id="accountToGo">left</span></p></td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="progressBarMain">
-                                            <div id="gPbarOverall" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p class="overallP">$572 of $1,458</p></div>
-                                        </div>
-                                    </td>   
-                                </tr>
-                                </table>
-                                <table>
-                                <tr>
-                                    <td><input ng-model="controller.monthlyIncome" class="newIncome" placeholder="New Income" type="number" /><button ng-click="controller.addIncome(income)" class="newIncomeBtn"><i class="fa fa-plus" aria-hidden="true" id="incomeIcons"></i></button></td>
-
-                                    <td><input ng-model="controller.eIncome" class="editIncome" placeholder="Edit (Ex. 10, -10)" type="number" /><button class="newIncomeBtn"><i class="fa fa-pencil" id="incomeIcons" aria-hidden="true"></i></button></td>
-                                </tr>
-                            </table>
-
+                        <div data-aos="fade-up-right" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="catDiv">
+                                <i class="glyphicon glyphicon-folder-open" id="folder"></i>
+                                <p id="iconHeadersCat">Categories</p>
+                                <p id="midSecPs">Take the time and stress out of organizing monthly expenses by separating spendings into specific categories.</p>
+                            </div>
                         </div>
+
+                        <div data-aos="fade-up-left" class="col-lg-6 col-md-6 co-sm-6 col-xs-6">
+                            <div class="goalDivMidSec">
+                                <i class="glyphicon glyphicon-piggy-bank" id="piggy"></i>
+                                <p class="iconHeaders">Goals</p>
+                                <p id="midsecPs">Learn from your spending habits and watch the progress you make towards achieving your financial goals.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1"></div>
                     </div>
+
                 </div>
-                </div>
-
-                
-                
-                        
-                <div class="mainCategories">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <button id="newBudgetBtn"><p id="addNew"><i id="addBudgetIcon" class="fa fa-plus fa-lg" aria-hidden="true"></i>New Category</p></button>
-
-                                <div class="mainBudgets">
-                                    <ul class="budgetLists">
-                                        
-                                            <li><p class="budgetTitle">Groceries</p></li>
-                                            <li><p class="mainDivLeftOver">$360<span id="mainDivToGo">left</span></p></li>
-                                            <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>                                        
-                                    </ul>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="progressBars">
-                                                    <div id="gPbar2" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p class="progressP">$240 of $500</p></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1"></i><input class="addNminusFields" placeholder="Edit Current" />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-
-                                <button id="newGoalBtn"><p id="newGoalP"><i id="addBudgetIcon" class="fa fa-plus fa-large"></i>New Goal</p></button>
-
-                                <div class="mainGoals">
-                                    <ul class="budgetLists">
-                                        
-                                            <li><p class="goalTitle">Ski Trip</p></li>
-                                            <li><p class="goalToGo">$400 <span id="goalTogoP">to go</span></p></li>
-                                            <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true"></i></li>
-                                        
-                                    </ul>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="progressBars">
-                                                    <div id="gPbar1" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p class="progressP">$800 of $1200</p></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <i id="addToGoal" class="fa fa-plus" aria-hidden="true"></i>
-                                                <input placeholder="+ or -" class="goalFields" />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mainBudgets">
-                                <ul class="budgetLists">
-                                    
-                                        <li class="budgetTitle">Gas</li>
-                                        <li class="mainDivLeftOver">$93<span id="mainDivToGo">left</span></p></li>
-                                        <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>
-                                </ul>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="progressBars">
-                                                <div id="gPbar3" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p class="progressP">$32 of $125</p></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1"></i><input class="addNminusFields" placeholder="Edit Current" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-
-                            <div class="col-md-6">
-                                <div class="mainGoals">
-                                    <ul class="budgetLists">
-                                        
-                                            <li><p class="goalTitle">Car</p></li>
-                                            <li><p class="goalToGo">$4500 <span id="goalTogoP">to go</span></p></li>
-                                            <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true"></i></li>                                        
-                                    </ul>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="progressBars">
-                                                    <div id="gPbar5" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p class="progressP">$3300 of $6500</p></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <i id="addToGoal" class="fa fa-plus" aria-hidden="true"></i>
-                                                <input placeholder="+ or -" class="goalFields" />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                    </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                        <div class="mainBudgets">
-                            <ul class="budgetLists">                              
-                                    <li><p class="budgetTitle">Weekends</p></li>
-                                    <li><p class="mainDivLeftOver">$360<span id="mainDivToGo">left</span></p></li>
-                                    <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>    </ul>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="progressBars">
-                                            <div id="gPbar4" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p class="progressP">$270 of $300</p></div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1"></i><input class="addNminusFields" placeholder="Edit Current" />
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-     </div>
-
-
-                        <div class="preFooter">
-                           <p class="freeAccount">Make a free account today.</p>
-                            <center>
-                            <button id="footerBtn" onclick="location.href='/register'">Get Started</button>
-                             </center>                      
-                    </div>
-                
-            
-        
-        
-
-
-<div class="closing">
-    <div class="row">
-        <div class="col-md-3">
-
+            </div>
         </div>
-        <div class="col-md-6">
-            <center>
-                <i id="closingI" class="fa fa-facebook fa-2x" aria-hidden="true"></i>
-                <i id="closingI" class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-                <i id="closingI" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                <i id="closingI" class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
-                <i id="closingI" class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
-            </center>
-        </div>
-        <div class="col-md-3">
 
+
+        <div class="closing">
+            <div class="container-fluid">
+
+                <p class="freeAccount">Make a free account today.</p>
+
+                <button id="footerBtn" onclick="location.href='/register'">Sign Up</button>
+
+
+
+
+                <hr />
+
+                <p id="contactInfoTop" class="contactInfo">240 Seven Farms Drive</p>
+                <p class="contactInfo">Charleston, SC 29492</p>
+                <p class="contactInfo">540-219-6840</p>
+
+
+
+
+                <i id="copyright" class="fa fa-copyright" aria-hidden="true"><span id="copyrightP"> 2017 BudgetBook</span></i>
+
+
+            </div>
         </div>
     </div>
-</div>
+
+

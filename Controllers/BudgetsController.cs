@@ -49,11 +49,11 @@ namespace newBudgetBook.Controllers
         }
 
         //Subtract from current spending
-        [HttpPut("amount/{budgetId}")]
-        public void Put(int budgetId, [FromBody]decimal amount)
-        {
-            _service.SubtractCurrentAmount(budgetId, amount);
-        }
+        //[HttpPut("amount/{budgetId}")]
+        //public void Put(int budgetId, [FromBody]decimal amount)
+        //{
+        //    _service.SubtractCurrentAmount(budgetId, amount);
+        //}
 
       
         [HttpDelete("{id}")]

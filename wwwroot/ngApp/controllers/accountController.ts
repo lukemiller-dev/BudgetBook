@@ -43,7 +43,7 @@ namespace newBudgetBook.Controllers {
 
         public login() {
             this.accountService.login(this.loginUser).then(() => {
-                this.$location.path('/login');
+                this.$location.path('/mainAccount');
             }).catch((results) => {
                 this.validationMessages = results;
             });
@@ -61,13 +61,13 @@ namespace newBudgetBook.Controllers {
 
         public register() {
             this.accountService.register(this.registerUser).then(() => {
-                this.$location.path('/');
+                this.$location.path('/mainAccount');
             }).catch((results) => {
                 this.validationMessages = results;
             });
         }
 
-        constructor(private accountService: newBudgetBook.Services.AccountService, private $location: ng.ILocationService) { }
+        constructor(private $state: ng.ui.IStateService, private accountService: newBudgetBook.Services.AccountService, private $location: ng.ILocationService) { }
     }
 
 

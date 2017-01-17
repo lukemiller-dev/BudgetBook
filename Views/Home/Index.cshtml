@@ -1,13 +1,20 @@
 <html ng-app="newBudgetBook">
 <head>
     <title>newBudgetBook</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/css/home.css" rel="stylesheet" />
     <link href="~/css/registerStyle.css" rel="stylesheet" />
     <link href="~/css/index.css" rel="stylesheet" />
     <link href="~/css/mainAccount.css" rel="stylesheet" />
-    
+    <link href="~/bower_components/aos/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial|Quicksand|Raleway|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <script src="~/bower_components/aos/src/js/aos.js"></script>
+    <script src="~/bower_components/aos/dist/aos.js"></script>       
+
+
 
     <script src="https://use.fontawesome.com/8f7cf61998.js"></script>
     
@@ -17,39 +24,10 @@
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
-
     <div class="container-fluid">
-
-        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a class="navTitleLink" href="/"><i id="navIcon" class="fa fa-book fa-3x" aria-hidden="true"></i><span id="navTitle">BudgetBook</span></a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <ul id="rightNav" class="nav navbar-nav">
-                                
-                                    <li><a ng-show="!account.isLoggedIn()" href="/register">Register</a></li>
-                                    <li><button class="navLogin" ng-click="account.openModal()" ng-show="!account.isLoggedIn()">Login</button></li>
-                                    <li><a href="/mainAccount" ng-show="account.isLoggedIn()">Account</a></li>
-                                    <li><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
-                                    <li id="userNameNav" ng-show="account.isLoggedIn()">
-                                        [{{account.getUserName()}}]
-                                    </li>
-                                
-                            </ul>
-                        </div>
-                    </form>
-                    </div>
-
-                </div>
-                </nav>
-
-                <hr />
-
-                <ui-view></ui-view>
+                <ui-view>
+                   
+                </ui-view>
             </div>
 
             <!-- Library Files -->
@@ -59,6 +37,7 @@
             <script src="/bower_components/angular-touch/angular-touch.js"></script>
             <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
             <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+            <script type="text/javascript" src="/scripts/jquery.min.js"></script> 
 
             <!-- App Files-->
             <script src="/ngapp/app.js"></script>
@@ -69,6 +48,9 @@
             <!-- Security -->
             <script src="/ngapp/controllers/accountcontroller.js"></script>
             <script src="/ngapp/services/accountservice.js"></script>
+    <script>
+    AOS.init();
+    </script>
 
 </body>
 </html>

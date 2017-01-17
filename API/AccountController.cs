@@ -39,7 +39,19 @@ namespace newBudgetBook.Controllers
         }
 
 
-        private async Task<UserViewModel> GetUser(string userName)
+        private async Task<UserViewModel> GetUser(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            var claims = await _userManager.GetClaimsAsync(user);
+            var vm = new UserViewModel
+            {
+                UserName = user.UserName,
+                Claims = claims.ToDictionary(c => c.Type, c => c.Value)
+            };
+            return vm;
+        }
+
+        private async Task<UserViewModel> GetUserByUserName(string userName)
         {
             var user = await _userManager.FindByNameAsync(userName);
             var claims = await _userManager.GetClaimsAsync(user);
@@ -62,7 +74,9 @@ namespace newBudgetBook.Controllers
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+                var getUser = await _userManager.FindByEmailAsync(model.Email);
+                var userName = getUser.UserName;
+                var result = await _signInManager.PasswordSignInAsync(userName, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
@@ -99,7 +113,7 @@ namespace newBudgetBook.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -111,7 +125,7 @@ namespace newBudgetBook.Controllers
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
-                    var userViewModel = await GetUser(user.UserName);
+                    var userViewModel = await GetUserByUserName(user.UserName);
                     return Ok(userViewModel);
                 }
                 AddErrors(result);

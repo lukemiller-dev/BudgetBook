@@ -1,6 +1,8 @@
 ﻿<div class="modal-header">
+    <i id="modalRemoveI" class="fa fa-times" ng-click="modal.closeModal()" aria-hidden="true"></i>
+
     <center>
-        <h3>New Goal</h3>
+        <h3 class="modalTitles">New Goal</h3>
     </center>
 </div>
 
@@ -12,7 +14,7 @@
                 <br />
                 <input placeholder="Amount" ng-model="goal.amount" class="loginInput" />
                 <br />
-                <button type="submit" ng-click="modal.closeModal()" class="btn btn-success">Add</button>
+                <button type="submit" ng-click="modal.closeModal()" class="addGoalBtn">Add</button>
             </form>
         </center>
     </div>

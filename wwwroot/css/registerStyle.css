@@ -7,8 +7,27 @@
 
 .localLogin {
     text-align: center;
-   
+    margin-top: 100px;
+    width: 35%;
+    margin: 150px auto;  
 }
+
+.loginHeader {
+   font-family: 'Questrial', sans-serif;
+   font-size: 25px;
+   text-align: left;
+}
+
+.loginQuestion {
+    font-size: 15px;   
+    color: black;
+    font-family: 'Questrial', sans-serif;
+}
+
+.loginQuestion:hover {
+    cursor: pointer;
+}
+
 
 .socialLogin {
     text-align: center;
@@ -25,16 +44,40 @@
     border: none;
     text-align: center;
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.loginInput {
-    border: 1px solid #80bfff;
+.loginInputCat {
+    border: 1px solid #e1e8ed;
     border-radius: 3px;
     margin-bottom: 15px;
     height: 40px;
     width: 350px;
+    padding-left: 10px;
     font-size: 18px;
+    font-family: 'Questrial', sans-serif;
 }
+
+.loginInputCat:focus {
+    border-color: #00cc99;
+}
+
+
+.loginInput {
+    border: 1px solid #e1e8ed;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 350px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-family: 'Questrial', sans-serif;
+}
+
+.loginInput:focus {
+    border-color: #80bfff;
+}
+
 
 .fbSignIn {
     background-color: #3b5998;
@@ -73,6 +116,7 @@
 
 .modalH {
     font-size: 18px;
+    font-family: 'Questrial', sans-serif;
 }
 
 #removeGlyph {

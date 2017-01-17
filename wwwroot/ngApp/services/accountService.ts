@@ -27,7 +27,7 @@ namespace newBudgetBook.Services {
                 this.$http.post('/api/account/login', loginUser).then((result) => {
                         this.storeUserInfo(result.data);
                         resolve();
-                        this.$state.go('register'); //Change after mainAccount state is made
+                        this.$state.go('mainAccount'); 
                 }).catch((result) => {
                     var messages = this.flattenValidation(result.data);
                     reject(messages);
@@ -40,7 +40,9 @@ namespace newBudgetBook.Services {
                 this.$http.post('/api/account/register', userLogin)
                     .then((result) => {
                         this.storeUserInfo(result.data);
+                   
                         resolve(result);
+                       
                     })
                     .catch((result) => {
                         var messages = this.flattenValidation(result.data);

@@ -1,6 +1,107 @@
 ﻿body {
+  
+    overflow-x: hidden;
+    
 }
 
+#homeNavBar {
+    background: transparent;
+}
+
+#homeNavTitle {
+     color: #fff;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 28px;
+    font-size: 23px; 
+    margin-left: -45px; 
+    float: left; 
+}
+
+#homeNavLogo {
+      color: #fff;
+       margin-top: -25px;   
+}
+
+#homeLogin {
+    visibility: hidden;
+}
+
+#homeRegister {
+    visibility: hidden;
+}
+
+   navbar-toggle {  
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#collapseMenu {
+    font-size: 35px;
+    margin-top: 25px;
+    margin-right: 50px;
+    color: #fff;
+}
+
+#navIconsSmall {
+    font-size: 15px;
+    color: #fff;
+    margin-right: 5px;
+}
+
+#homeNavList {
+    visibility: hidden;
+}
+
+
+
+@media screen and (min-width: 800px) {
+
+
+    #homeRegister {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 25px;
+    margin-right: 20px;
+    visibility: visible; 
+    font-family: 'Questrial', sans-serif; 
+ }
+
+    #homeLogin {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    visibility: visible;
+    font-family: 'Questrial', sans-serif;
+    }   
+    
+    #collapseMenu {
+        visibility: hidden;
+        margin-right: 0;
+    } 
+
+    .signUpBtn {
+        height: 30px;
+        width: 120px;
+        margin-left: 10px;
+        margin-top: 25px;
+        border: none;
+        color:#fff;
+        border-radius: 2px;
+        background-color: #80bfff;
+        outline: none;
+    }
+}
+
+.container-fluid {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+}
 #navIcon {
     color: #80bfff;
     padding-top: 10px;
@@ -8,37 +109,136 @@
     margin-left: 20px;
 }
 
-#mainNav {  
-    height: 60px;   
+#mainNav {
+    height: 60px;
+    /*background-color: rgba(255,255,255, 0.9);*/
+    background-color: transparent;
 }
  .navLogin {
         height: 30px;
         width: 100px;
-        background-color: #f8f8f8;
-        border-radius: 10px;
-        border: 2px solid #80bfff;
+        color: #fff;
+        background-color: rgba(243,243,243,0.4);
+        border-radius: 2px;
+        font-size: 18px;
+        border: none;
         margin-top: 10px;
+        font-family: 'Questrial', sans-serif;
+        margin-right: 20px;
     }
 
+ .navLogin:focus {
+     outline:none;
+ }
 
-#rightNav {
-    text-align: right;
-    font-size: 18px;
-    color: slategray;
-    margin-right: 15px;
-}
+
+
 
 .navTable td {
     padding-top: 25px;
     margin-right: 10px;
 }
 
-#navTitle {
-    color: slategray;
-    font-size: 21px;  
-    text-decoration: none; 
+
+
+#navTitleAccount a:hover {
+    text-decoration: none;
 }
 
+a.navTitleLink {
+    text-decoration: none;
+}
 #userNameNav {
     padding-top: 13px;
+    font-family: 'Questrial', sans-serif;
 }
+
+
+#navIconAccount {
+    color: #fff;
+    margin-top: -12px;
+    float: left;
+    margin-left: -40px;
+}
+
+#mainNavAccount {
+    height: 60px;
+    background-color: rgba(128,191,255,0.8);
+}
+
+.nav li {
+	display: inline;
+	color: white;
+}
+
+
+
+#mainAccountNav {
+    height: 60px;
+    padding-bottom: 10px;
+    background: #80bfff;
+}
+
+
+.navbar-inverse {
+    border: none;
+}
+
+.navTitleLink {
+   padding-top: 21px;
+   margin-left: -35px;
+
+   color: #fff;
+   font-size: 23px;  
+   text-decoration: none; 
+   font-family: 'Raleway', sans-serif;
+   float: left;
+}
+
+.navTitleLink:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+#userNameAccount {
+    cursor: default;
+}
+
+#userNameAccount {
+    text-align: right;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 15px;
+    font-family: 'Questrial', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#navLogout {
+     text-align: right;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 15px;
+    font-family: 'Questrial', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+#rightNavAccount a {
+    text-align: right;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 15px;
+    font-family: 'Questrial', sans-serif;
+    background-color: transparent;
+}
+
+#rightNavAccount a:active {
+    background-color: transparent;
+}
+
+#rightNavAccount a:focus {
+    border-bottom: 4px solid #fff;
+}
+

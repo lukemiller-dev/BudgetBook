@@ -1,33 +1,82 @@
 ﻿
-    <div class="mainAccountMain">
+<div id="main">
+<div class="container-fluid">
+
+<nav id="mainAccountNav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+         <div class="navbar-header">
+             <a href="/"><img height="100" id="navIconAccount" src="http://i.imgur.com/JMev8ED.png" /></a>
+             <a href="/" class="navTitleLink">BudgetBook</a>
+      <button ng-click="controller.openCollapse()" ng-show="controller.menuOption" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+                    <li><a href="/mainAccount" ng-show="!account.isLoggedIn()">Account</a></li>
+                    <li><a id="userNameAccount" href="#" ng-show="account.isLoggedIn()">{{account.getUserName()}}</a></li>
+                    <li><a id="navLogout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
+				</ul>
+			</div>
+        </div>
+
+    <div id="hamburger" class="sidenav">
+
+        <img src="http://i.imgur.com/71UPSMt.png" height="22" id="closeOption" ng-click="controller.closeCollapse()" class="fa fa-times" aria-hidden="true" />
+
+        <div id="userNameDiv" ng-show="account.isLoggedIn()">
+            <p id="userName" ng-show="account.isLoggedIn()">{{account.getUserName()}}</p>
+            <p>{{account.validationMessages}}</p>
+        </div>
+
+
+
+
+        <button class="sideLoginBtn" ng-click="account.openModal()" ng-show="!account.isLoggedIn()">Login</button>
+        <a ng-show="!account.isLoggedIn()" href="/register">Register</a>
+        <a href="/mainAccount" ng-show="account.isLoggedIn()">Account</a>
+        <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+
+
+
+    </div>
+		</nav>
+
+
+    <div id="mainAccountMain" class="mainAccountMain">
         
-            <div class="container-fluid">
-                
-                    <div class="container">
+            <div class="container">
+
+                    
                     <div class="row">
-                        <div class="col-md-1 col-sm-1"></div>
-                        <div class="col-md-10 col-sm-10">
-                            <div class="overallIncome">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div style="display: flex; flex-direction:row; justify-content: center">
+                            <div class="overallIncome">                         
+          
+                                        <p class="overallTitle">Total</p>
+                                <ul class="overallBudget">
+                                    <li class="progressP">${{controller.appUserIncome.spent}} <span class="of">of</span> ${{controller.appUserIncome.monthlyIncomeFixed}}</li>
+                                    <li class="accountLeftOver">${{controller.appUserIncome.currentTotal}}<span id="accountToGo">left</span></li>
 
-                                
-                                    <ul class="overallBudget">
-
-                                        <li class="overallTitle">Total</li>
-                                        <li><a class="accountLeftOver">${{controller.appUserIncome.currentTotal}}<span id="accountToGo">left</span></a></li>
-
-                                    </ul>
+                                </ul>
                               
-                                <table>
-                                    <tr>
-                                        <td><div class="accountOverallDiv"><p class="overallP">${{controller.appUserIncome.spent}} of ${{controller.appUserIncome.monthlyIncomeFixed}}</p></div></td>
-                                    </tr>
-                                </table>
+                              
+                                           
+                                        <progress class="accountOverallDiv" value="{{controller.appUserIncome.spent}}" max="{{controller.appUserIncome.monthlyIncomeFixed}}" style="color: #fff; background-color: #fff;"></progress>
+                                  
                                 <table>
                                     <tr>
                                         <td><input ng-model="controller.monthlyIncome" class="newIncome" placeholder="New Income" type="number" /><button ng-click="controller.addIncome(income)" class="newIncomeBtn"><i class="fa fa-plus" aria-hidden="true" id="incomeIcons"></i></button></td>
-                                        <td><input ng-model="controller.eIncome" class="editIncome" placeholder="Edit Income" type="number" /><button class="newIncomeBtn"><i class="fa fa-pencil" id="incomeIcons" aria-hidden="true"></i></button></td>
+                                        <td><input ng-model="controller.eIncome" class="editIncome" placeholder="Edit Income" type="number" /><button class="newIncomeBtn"><i ng-click="controller.editIncome()" class="fa fa-pencil" id="incomeIcons" aria-hidden="true"></i></button></td>
                                     </tr>
                                 </table>
+                            </div>
                             </div>
                     </div>
                         <div class="col-md-1 col-sm-1"></div>
@@ -41,23 +90,28 @@
                         <div class="container">
                         <div class="row">
                         <div class="col-md-6">
-                       
-                            <button id="newBudgetBtn" ng-click="controller.openModal()"><p id="addNew"><i id="addBudgetIcon" class="fa fa-plus fa-lg" ng-click="controller.openModal()" aria-hidden="true"></i>New Category</p></button>
+                            
+                            <div style="display: flex; flex-direction: row; justify-content:center;"><button id="newBudgetBtn" ng-click="controller.openModal()"><p id="addNew"><i id="addBudgetIcon" class="fa fa-plus fa-lg" ng-click="controller.openModal()" aria-hidden="true"></i>New Category</p></button></div>
 
                         <div ng-repeat="budget in controller.maBudgets" class="mainBudgets">
+                            <i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i>
+                            <p class="budgetTitle">{{budget.name}}</p>
                             <ul class="budgetLists">
-                                    <li class="budgetTitle">{{budget.name}}</li>
+                                   <li class="budgetP">${{budget.current}} <span class="mainOf">of</span> ${{budget.amount}}</li>
                                     <li class="mainDivLeftOver">${{budget.remaining}}<span id="mainDivToGo">left</span></li>
-                                    <li><i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i></li>
+                                   
                             </ul>
-                            <table>
-                                <tr>
-                                    <td><div class="accountBars"><p class="progressP">${{budget.current}} of ${{budget.amount}}</p></div></td>
-                                </tr>
+                            
+                                    <progress value="{{budget.current}}" max="{{budget.amount}}" class="accountBars" style="color: #fff; background-color:#fff;"></progress>
+                                <table>
                                 <tr>
                                     <td>
-                                        <i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1" ng-click="controller.addToCurrent(budget.id)"></i><input class="addNminusFields" placeholder="Edit Current" ng-model="controller.current" />
+                                        <input ng-hide="controller.hideAddInput" class="addNminusFields" placeholder="Edit" ng-model="controller.current" /><i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1" ng-click="controller.addToCurrent(budget.id)"></i>
+                                     
                                     </td>
+                                    <!--<td>
+                                        <input ng-hide="controller.hideSubtractInput" class="addNminusFields" placeholder="Edit" ng-model="controller.sCurrent" /><i class="fa fa-minus" aria-hidden="true" id="addNminusIcons2" ng-click="controller.subtractCurrent(budget.id)"></i>
+                                    </td>-->
                                        
                                 </tr>
                             </table>
@@ -66,24 +120,27 @@
                    
 
                     <div class="col-md-6">
-                        
-                        <button id="newGoalBtn" ng-click="controller.openGoalModal()"><p id="newGoalP"><i id="addBudgetIcon" class="fa fa-plus fa-large" ng-click="controller.openGoalModal()"></i>New Goal</p></button>                           
+                        <div style="display:flex; flex-direction:row; justify-content: center;">
+                        <button id="newGoalBtn" ng-click="controller.openGoalModal()"><p id="newGoalP"><i id="addBudgetIcon" class="fa fa-plus fa-large" ng-click="controller.openGoalModal()"></i>New Goal</p></button></div>                          
                         
                         <div ng-repeat="goal in controller.goals" class="mainGoals">
+                            <p class="budgetTitle">{{goal.name}}</p>
                             <ul class="budgetLists">
-                                    <li class="goalTitle">{{goal.name}}</li>
-                                    <li class="goalToGo">${{goal.remaining}} <span id="goalTogoP">to go</span></li>
-                                    <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteGoal(goal.id)"></i></li>
+                                <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteGoal(goal.id)"></i></li>
+                                              
                                 </ul>
+                            <ul class="budgetLists">
+                                <li class="budgetP">${{goal.current}} <span class="mainOf">of</span> ${{goal.amount}}</li>
+                                <li class="goalToGo">${{goal.remaining}} <span id="goalTogoP">to go</span></li>                    
+                                </ul>
+                         
+                                    <progress id="goalBar" class="accountGoalBar" value="{{goal.current}}" max="{{goal.amount}}" style="color:#fff; background-color:#fff"></progress>
+                                
                             <table>
                                 <tr>
-                                    <td><div class="progressBars"><p class="progressP">${{goal.current}} of ${{goal.amount}}</p></div></td>
-                                </tr>
-
-                                <tr>
                                     <td>
-                                        <i id="addToGoal" ng-click="controller.addToGoal(goal.id)" class="fa fa-plus" aria-hidden="true"></i>
-                                        <input placeholder="Edit Current" ng-model="controller.gCurrent" class="goalFields" />
+                                        
+                                        <input placeholder="Edit" ng-model="controller.gCurrent" class="goalFields" /><i id="addToGoal" ng-click="controller.addToGoal(goal.id)" class="fa fa-plus" aria-hidden="true"></i>
                                     </td>
                                 </tr>                            
                             </table>
@@ -94,8 +151,7 @@
             </div>
         </div>
         </div>
-
-
+    </div>
        
                 
 

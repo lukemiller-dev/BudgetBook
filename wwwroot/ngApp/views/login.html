@@ -18,14 +18,14 @@
                     <input class="loginInput" placeholder="Email" ng-model="controller.loginUser.email" />
                 </div>
                 <div>
-                    <input class="loginInput" placeholder="Password" ng-model="controller.loginUser.password" />
+                    <input class="loginInput" placeholder="Password" type="password" ng-model="controller.loginUser.password" />
                 </div>
 
                 <input ng-click="modal.closeModal()" class="loginBtn" type="submit" value="Log In"/>
             </form>
 
         </fieldset>
-        <fieldset>
+        <!--<fieldset>
             <h4>or</h4>
             <hr />
             <button class="fbSignIn"><i id="LogInIcon" class="fa fa-facebook fa-2x" aria-hidden="true"></i><span class="loginSpan">Continue with Facebook</span></button>
@@ -37,7 +37,7 @@
                 </li>
             </ul>
 
-        </fieldset>
+        </fieldset>-->
 
         <p>Don't have an account? <a ng-click="modal.closeModal()" href="/register">Sign Up >></a></p>
     </center>
