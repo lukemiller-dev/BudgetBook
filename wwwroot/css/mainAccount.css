@@ -99,9 +99,9 @@ progress[value]::-webkit-progress-value {
 
 .mainCategories {
     background-color: #f2f2f2;
-    height: auto;
+    height: 100%;
     width: 100%;
-    padding-bottom: 20%;
+  
 }
 
 
@@ -273,7 +273,7 @@ progress[value]::-webkit-progress-value {
 /*Main Bars*/
 
 .mainBudgets {
-    height: 225px;
+    height: 215px;
     width: 100%;
     background-color: #fff;
     border-radius: 5px;
@@ -393,44 +393,34 @@ font-family: 'Droid Serif', serif;
 }
 
 #addNminusIcons1 {
-    font-size: 14px;
-    color: #fff;
-    margin-top: 20px;
-    margin-left: 100px;
-    height: 25px;
-    width: 25px;
-    background-color: #00cc99;
-    border-radius: 5px;
-    position: absolute;  
-    padding-top: 7px;
-    padding-left: 7px;  
+
+    color: lightslategray;
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 20px;
+  
 }
 
 #addNminusIcons1:hover {
-   background-color: lightslategray;
     cursor: pointer;
-    color: #fff;
+    
 }
 
 #addNminusIcons2 {
-    font-size: 14px;
-    color: #fff;
-    margin-top: 20px;
-    margin-left: 150px;
-    height: 25px;
-    width: 25px;
-    background-color: #00cc99;
-    border-radius: 5px;
-    position: absolute;  
-    padding-top: 7px;
-    padding-left: 7px; 
+    
+    color: lightslategray;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 20px;
 }
 
 
+
+
 #addNminusIcons2:hover {
-   background-color: lightslategray;
+   
     cursor: pointer;
-    color: #fff;
+  
 }
 
 
@@ -438,15 +428,15 @@ font-family: 'Droid Serif', serif;
 .addNminusFields {
     width: 90px;
     outline: none;
-    height: 22px;
+    height: 20px;
     font-size: 17px;
     border-left: 2px solid #fff;
     border-top: 2px solid #fff;
     border-right: 2px solid #fff;
     border-bottom: 2px solid lightslategray;
     border-radius: 2px;
-    margin-left: 35px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
      font-family: 'Questrial', sans-serif;
 }
 
@@ -485,7 +475,7 @@ font-family: 'Droid Serif', serif;
 
 .mainGoals {
     width: 100%;
-    height: 225px;
+    height: 215px;
     background-color: #fff;
     margin-top: 20px;
     position: relative;
@@ -521,36 +511,41 @@ font-family: 'Droid Serif', serif;
 }
 
 #addToGoal {
-       font-size: 14px;
-    color: #fff;
-    margin-top: 20px;
-    margin-left: 5px;
-    height: 25px;
-    width: 25px;
-    background-color: #80bfff;
-    border-radius: 5px;
-    position: absolute;
-    padding-top: 7px;
-    padding-left: 7px;
+       color: lightslategray;
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 20px;
 }
 
 #addToGoal:hover {
-    background-color: lightslategray;
+   
+    cursor: pointer;
+}
+
+#subtractGoal {
+    color: lightslategray;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+#subtractGoal:hover {
     cursor: pointer;
 }
 
 .goalFields {
-    width: 90px;
-    height: 22px;
+       width: 90px;
+    outline: none;
+    height: 20px;
     font-size: 17px;
     border-left: 2px solid #fff;
     border-top: 2px solid #fff;
     border-right: 2px solid #fff;
     border-bottom: 2px solid lightslategray;
     border-radius: 2px;
-    margin-left: 35px;
-    margin-top: 20px;
-    font-family: 'Questrial', sans-serif;
+    margin-left: 10px;
+    margin-top: 15px;
+     font-family: 'Questrial', sans-serif;
 }
 
 

@@ -99,6 +99,17 @@ namespace newBudgetBook.Services
             
         }
 
+       public void SubtractCurrentAddSavings(int goalId, decimal amount, string userName)
+        {
+            var user = _repo.GetUserByUserName(userName);
+            var thisGoal = _repo.GetGoalById(goalId);
+            thisGoal.Current -= amount;
+            thisGoal.AppUser.MonthlyIncome += amount;
+
+            thisGoal.AppUser.AddedToGoal -= amount;
+            _repo.Update(thisGoal);
+        }
+
         //Delete Goal 
         public void DeleteGoal(int id)
         {

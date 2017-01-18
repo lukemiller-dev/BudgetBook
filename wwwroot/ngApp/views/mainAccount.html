@@ -101,19 +101,36 @@
                                     <li class="mainDivLeftOver">${{budget.remaining}}<span id="mainDivToGo">left</span></li>
                                    
                             </ul>
+
+                            
                             
                                     <progress value="{{budget.current}}" max="{{budget.amount}}" class="accountBars" style="color: #fff; background-color:#fff;"></progress>
                                 <table>
                                 <tr>
                                     <td>
-                                        <input ng-hide="controller.hideAddInput" class="addNminusFields" placeholder="Edit" ng-model="controller.current" /><i class="fa fa-plus" aria-hidden="true" id="addNminusIcons1" ng-click="controller.addToCurrent(budget.id)"></i>
-                                     
+                                        <i ng-hide="controller.addIcon" class="fa fa-plus" aria-hidden="true" id="addNminusIcons1" ng-click="controller.addToCurrent(budget.id)"></i>
                                     </td>
+                                    <td>
+                                        <input ng-keyup="$event.keyCode == 13 && controller.addToCurrent(budget.id)" ng-hide="controller.hideAddInput" class="addNminusFields" placeholder="Add" ng-model="controller.current" />
+
+                                    </td>
+                              
+                                    <td ng-click="controller.subtractCurrent(budget.id)">
+                                        <i ng-click="controller.moveSubtractIcon()" ng-hide="controller.subtractIcon" class="fa fa-minus" aria-hidden="true" id="addNminusIcons2" ></i>
+                                    </td>
+                                    <td>
+                                        <input ng-keyup="$event.keyCode == 13 && controller.subtractCurrent(budget.id)" ng-hide="controller.hideSubtractInput" class="addNminusFields" placeholder="Subtract" ng-model="controller.sCurrent" />
+                                    </td>
+                                </tr>
+
+                                    <tr>
+                                    
+                                    </tr>
                                     <!--<td>
                                         <input ng-hide="controller.hideSubtractInput" class="addNminusFields" placeholder="Edit" ng-model="controller.sCurrent" /><i class="fa fa-minus" aria-hidden="true" id="addNminusIcons2" ng-click="controller.subtractCurrent(budget.id)"></i>
                                     </td>-->
                                        
-                                </tr>
+                              
                             </table>
                             </div>
                         </div>
@@ -139,8 +156,18 @@
                             <table>
                                 <tr>
                                     <td>
+                                        <i ng-hide="controller.gAddIcon" id="addToGoal" ng-click="controller.addToGoal(goal.id)" class="fa fa-plus" aria-hidden="true"></i>
+                                    </td>
+                                    <td>
                                         
-                                        <input placeholder="Edit" ng-model="controller.gCurrent" class="goalFields" /><i id="addToGoal" ng-click="controller.addToGoal(goal.id)" class="fa fa-plus" aria-hidden="true"></i>
+                                        <input ng-keyup="$event.keyCode == 13 && controller.addToGoal(goal.id)" ng-hide="controller.gAddInput" placeholder="Add" ng-model="controller.gCurrent" class="goalFields" />
+                                    </td>
+
+                                    <td ng-click="controller.subtractGoal(goal.id)">
+                                        <i ng-click="controller.moveGsubtractIcon()" ng-hide="controller.gSubtractIcon" class="fa fa-minus" aria-hidden="true" id="subtractGoal"></i>
+                                    </td>
+                                    <td>
+                                        <input ng-keyup="$event.keyCode == 13 && controller.subtractGoal(goal.id)" ng-hide="controller.gSubtractInput" placeholder="Subtract" ng-model="controller.gCurrent" class="goalFields" />
                                     </td>
                                 </tr>                            
                             </table>

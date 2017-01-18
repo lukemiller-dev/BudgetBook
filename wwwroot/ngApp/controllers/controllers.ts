@@ -51,9 +51,13 @@ namespace newBudgetBook.Controllers {
         }
 
         public addGoal(goal) { 
-            this.$http.post('api/goals', goal).then((res) => {
-                this.$state.reload();
-            })
+                    
+                    this.$http.post('api/goals', goal).then((res) => {
+                        this.$state.reload();
+                      
+                    
+                })
+            
         }
         public closeModal() {
             this.$uibModalInstance.close();
@@ -70,6 +74,16 @@ namespace newBudgetBook.Controllers {
         public gCurrent;
         public eIncome;
         public menuOption = true;
+        public hideAddInput = true;
+        public hideSubtractInput = true;
+        public subtractIcon = false;
+        public addIcon = false;
+
+        public gAddInput = true;
+        public gSubtractInput = true;
+        public gSubtractIcon = false;
+        public gAddIcon = false;
+
         constructor(public $http: ng.IHttpService, public $state: ng.ui.IStateService, public $uibModal: ng.ui.bootstrap.IModalService, public ModalService: newBudgetBook.Services.ModalService, public $stateParams: ng.ui.IStateParamsService) {
             $http.get('api/budgets').then((res) => {
                 this.maBudgets = res.data;
@@ -82,8 +96,7 @@ namespace newBudgetBook.Controllers {
             })
         }
 
-        public addIncome() {
-           
+        public addIncome() {         
             this.$http.post('api/appUsers', this.monthlyIncome).then((res) => {             
                 this.$state.reload();
             })
@@ -98,6 +111,8 @@ namespace newBudgetBook.Controllers {
         public addToCurrent(budgetId) {
             console.log(budgetId);
             console.log(this.current);
+            this.hideAddInput = !this.hideAddInput;
+            this.subtractIcon = !this.subtractIcon;
             this.$http.post(`api/budgets/amount/${budgetId}`, this.current).then((res) => {
                 this.$state.reload();
             })
@@ -106,9 +121,16 @@ namespace newBudgetBook.Controllers {
         public subtractCurrent(budgetId) {
             console.log(budgetId);
             console.log(this.sCurrent);
+            this.hideSubtractInput = !this.hideSubtractInput;
+            this.addIcon = !this.addIcon;
             this.$http.put(`api/budgets/amount/${budgetId}`, this.sCurrent).then((res) => {
                 this.$state.reload();
             })
+        }
+
+        public moveSubtractIcon() {
+            document.getElementById("addNminusIcons2").style.marginLeft = "35px";
+            //make toggle even margins
         }
 
      
@@ -147,9 +169,24 @@ namespace newBudgetBook.Controllers {
         //goal methods
 
         public addToGoal(goalId) {
+            this.gAddInput = !this.gAddInput;
+            this.gSubtractIcon = !this.gSubtractIcon;
             this.$http.post(`api/goals/amount/${goalId}`, this.gCurrent, this.monthlyIncome).then((res) => {
                 this.$state.reload();
             })
+        }
+
+        public subtractGoal(goalId) {
+            this.gSubtractInput = !this.gSubtractInput;
+            this.gAddIcon = !this.gAddIcon;
+            this.$http.put(`api/goals/amount/${goalId}`, this.gCurrent, this.monthlyIncome).then((res) => {
+                this.$state.reload();
+            })
+        }
+
+        public moveGsubtractIcon() {
+            document.getElementById("subtractGoal").style.marginLeft = "35px";
+            //make toggle even margins
         }
 
         public deleteGoal(id) {

@@ -47,6 +47,13 @@ namespace newBudgetBook.Controllers
             _service.AddToCurrentSubtractSavings(goalId, amount, User.Identity.Name);
         }
 
+        //SubtractCurrentAddSavings
+        [HttpPut("amount/{goalId}")]
+        public void Put(int goalId, [FromBody]decimal amount)
+        {
+            _service.SubtractCurrentAddSavings(goalId, amount, User.Identity.Name);
+        }
+
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
