@@ -3,6 +3,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <ShowAllFiles>true</ShowAllFiles>
-    <NameOfLastUsedPublishProfile>local</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>betaBudgetBook - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

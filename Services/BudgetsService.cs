@@ -97,6 +97,16 @@ namespace newBudgetBook.Services
         _repo.Add(budget);
     }
 
+     //Edit Budget 
+     public void EditBudget(int budgetId, string name, decimal amount, decimal current)
+        {
+            var thisBudget = _repo.GetBudgetById(budgetId);
+            thisBudget.Name = name;
+            thisBudget.Amount = amount;
+            thisBudget.Current = current;
+            _repo.Update(thisBudget);
+            
+        }
     //Delete
     public void DeleteBudget(int id)
     {

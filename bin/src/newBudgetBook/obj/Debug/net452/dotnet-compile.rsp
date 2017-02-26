@@ -208,6 +208,8 @@ C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\20161204043827_monlthyInc
 C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\20161204043827_monlthyIncomeFixed.Designer.cs
 C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\20161205040214_addGoalToSpent.cs
 C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\20161205040214_addGoalToSpent.Designer.cs
+C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\20170125193828_addedToGoalChange.cs
+C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\20170125193828_addedToGoalChange.Designer.cs
 C:\Projects\newBudgetBook\src\newBudgetBook\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Projects\newBudgetBook\src\newBudgetBook\Models\ApplicationUser.cs
 C:\Projects\newBudgetBook\src\newBudgetBook\Models\Budget.cs

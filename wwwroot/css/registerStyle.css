@@ -5,17 +5,39 @@
     background-color: #fff;   
 }
 
+#navTitleLinkRegister {
+    padding-top: 21px;
+ 
+    margin-left: 5px;
+   color: #fff;
+   font-size: 23px;  
+   text-decoration: none; 
+   font-family: 'Raleway', sans-serif;
+   float: left;
+}
+
+
+
+#navIconRegister {
+    color: #fff;
+    margin-top: 10px;
+    float: left;
+    margin-left: 20px;
+    height: 40px;
+}
+
 .localLogin {
     text-align: center;
     margin-top: 100px;
-    width: 35%;
+    width: 90%;
     margin: 150px auto;  
 }
 
 .loginHeader {
    font-family: 'Questrial', sans-serif;
    font-size: 25px;
-   text-align: left;
+   text-align: center;
+
 }
 
 .loginQuestion {
@@ -126,4 +148,26 @@
 
 #removeGlyph:hover{
     cursor: pointer;
+}
+
+
+
+.loginListTop li {
+list-style-type: none;
+
+}
+
+
+@media (max-width: 768px) {
+    .loginInput {
+        width: 275px;
+    }
+
+    .loginBtn {
+        width: 275px;
+    }
+
+    .loginInputCat {
+        width: 275px;
+    }
 }

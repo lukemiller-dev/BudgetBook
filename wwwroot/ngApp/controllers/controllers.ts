@@ -15,17 +15,16 @@ namespace newBudgetBook.Controllers {
             this.sideIcon = false;
             console.log("Test");                     
             document.getElementById("sidenav").style.width = "300px"; 
-            document.body.style.marginRight = "300px";  
+        
             document.getElementById("homeNavBar").style.marginRight = "300px";
-            document.body.style.marginLeft = "-300px"
-            //document.getElementById("homeNavBar").style.marginLeft = "-70";            
+       
+                 
     }
 
         public closeNav() {
             this.sideIcon = true;
             document.getElementById("sidenav").style.width = "0";  
-            document.body.style.marginRight = "0";  
-            document.body.style.marginLeft = "0";
+     
             document.getElementById("homeNavBar").style.marginRight = "0";
         }
 
@@ -40,7 +39,10 @@ namespace newBudgetBook.Controllers {
     
 
     export class ModalController {
-        public budgets;
+        public budget;
+        public eCurrent;
+        public eName;
+        public eAmount;
         public goals;
         constructor(public $http: ng.IHttpService, public $state: ng.ui.IStateService, public $uibModalInstance: ng.ui.bootstrap.IModalServiceInstance) { }
 
@@ -53,12 +55,11 @@ namespace newBudgetBook.Controllers {
         public addGoal(goal) { 
                     
                     this.$http.post('api/goals', goal).then((res) => {
-                        this.$state.reload();
-                      
-                    
-                })
-            
+                        this.$state.reload();                                   
+                })          
         }
+
+       
         public closeModal() {
             this.$uibModalInstance.close();
         }
@@ -78,7 +79,6 @@ namespace newBudgetBook.Controllers {
         public hideSubtractInput = true;
         public subtractIcon = false;
         public addIcon = false;
-
         public gAddInput = true;
         public gSubtractInput = true;
         public gSubtractIcon = false;
@@ -111,6 +111,7 @@ namespace newBudgetBook.Controllers {
         public addToCurrent(budgetId) {
             console.log(budgetId);
             console.log(this.current);
+
             this.hideAddInput = !this.hideAddInput;
             this.subtractIcon = !this.subtractIcon;
             this.$http.post(`api/budgets/amount/${budgetId}`, this.current).then((res) => {
@@ -119,18 +120,17 @@ namespace newBudgetBook.Controllers {
         }
 
         public subtractCurrent(budgetId) {
-            console.log(budgetId);
-            console.log(this.sCurrent);
             this.hideSubtractInput = !this.hideSubtractInput;
             this.addIcon = !this.addIcon;
+
             this.$http.put(`api/budgets/amount/${budgetId}`, this.sCurrent).then((res) => {
                 this.$state.reload();
             })
         }
 
         public moveSubtractIcon() {
-            document.getElementById("addNminusIcons2").style.marginLeft = "35px";
-            //make toggle even margins
+            this.hideSubtractInput = !this.hideSubtractInput;
+            this.addIcon = !this.addIcon;
         }
 
      
@@ -147,6 +147,10 @@ namespace newBudgetBook.Controllers {
 
         public openGoalModal(html) {
             this.ModalService.openModal("goalModal.html");
+        }
+
+        public editBudgetModal(html) {
+            this.ModalService.openModal("editBudget.html");
         }
 
         public openCollapse() {  
@@ -177,6 +181,7 @@ namespace newBudgetBook.Controllers {
         }
 
         public subtractGoal(goalId) {
+            
             this.gSubtractInput = !this.gSubtractInput;
             this.gAddIcon = !this.gAddIcon;
             this.$http.put(`api/goals/amount/${goalId}`, this.gCurrent, this.monthlyIncome).then((res) => {
@@ -184,10 +189,7 @@ namespace newBudgetBook.Controllers {
             })
         }
 
-        public moveGsubtractIcon() {
-            document.getElementById("subtractGoal").style.marginLeft = "35px";
-            //make toggle even margins
-        }
+      
 
         public deleteGoal(id) {
             this.$http.delete(`api/goals/${id}`).then((res) => {

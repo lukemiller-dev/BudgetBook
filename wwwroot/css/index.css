@@ -1,11 +1,38 @@
 ﻿body {
   
     overflow-x: hidden;
+    margin-right:0;
+    margin-left: 0;
+}
+
+a:focus {
+    outline: none;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+.homeNavBar {
+    background: transparent;
+    min-height: 75px;
     
 }
 
-#homeNavBar {
-    background: transparent;
+.backgroundChange {
+    
+    background: rgba(128, 191, 255,0.9);
+}
+
+
+.transition {    
+  -webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 #homeNavTitle {
@@ -19,7 +46,15 @@
 
 #homeNavLogo {
       color: #fff;
-       margin-top: -25px;   
+       margin-top: -5px;
+       margin-left: 20px;
+       height: 3em;
+          
+}
+
+.navbar-toggle {
+    margin-right: 32px;
+    margin-top: 18px;
 }
 
 #homeLogin {
@@ -90,8 +125,12 @@
         border: none;
         color:#fff;
         border-radius: 2px;
-        background-color: #80bfff;
+        background-color: #00cc99;
         outline: none;
+    }
+
+    .signUpBtn:hover {
+        background-color: #00A37A;
     }
 }
 
@@ -156,9 +195,9 @@ a.navTitleLink {
 
 #navIconAccount {
     color: #fff;
-    margin-top: -12px;
+    margin-top: 5px;
     float: left;
-    margin-left: -40px;
+    margin-left: 40px;
 }
 
 #mainNavAccount {
@@ -185,14 +224,13 @@ a.navTitleLink {
 }
 
 .navTitleLink {
-   padding-top: 21px;
-   margin-left: -35px;
-
-   color: #fff;
-   font-size: 23px;  
-   text-decoration: none; 
-   font-family: 'Raleway', sans-serif;
-   float: left;
+    padding-top: 21px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 23px;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    float: left;
 }
 
 .navTitleLink:hover {
@@ -200,8 +238,16 @@ a.navTitleLink {
     cursor: pointer;
 }
 
-#userNameAccount {
-    cursor: default;
+
+#userNameHome {
+    text-align: right;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 15px;
+    font-family: 'Questrial', sans-serif;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    cursor: pointer;
 }
 
 #userNameAccount {
@@ -210,17 +256,30 @@ a.navTitleLink {
     color: #fff;
     margin-right: 15px;
     font-family: 'Questrial', sans-serif;
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 20px;
+    cursor: pointer;
 }
+
 
 #navLogout {
      text-align: right;
     font-size: 18px;
     color: #fff;
-    margin-right: 15px;
+    margin-right: 50px;
     font-family: 'Questrial', sans-serif;
-    padding-top: 20px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+#navLogoutAccount {
+    text-align: right;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 50px;
+    font-family: 'Questrial', sans-serif;
+    padding-top: 25px;
     padding-bottom: 20px;
     cursor: pointer;
 }
@@ -241,4 +300,5 @@ a.navTitleLink {
 #rightNavAccount a:focus {
     border-bottom: 4px solid #fff;
 }
+
 

@@ -1,6 +1,6 @@
-﻿
-
-
+﻿body {
+    overflow-y: visible;
+}
 
 /*overall Income and PBars*/
 #goalBar {
@@ -95,12 +95,14 @@ progress[value]::-webkit-progress-value {
     background-color: #f2f2f2;
     margin-top: 0px;
     height: auto;
+    padding-bottom: 70px;
 }
 
 .mainCategories {
     background-color: #f2f2f2;
-    height: 100%;
+    height: auto;
     width: 100%;
+    padding-bottom: 20%;
   
 }
 
@@ -117,7 +119,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .overallTitle {
-    font-size: 35px;
+    font-size: 1.9em;
     margin-left: 30px;
     padding-top: 15px;
     font-family: 'Questrial', sans-serif;
@@ -156,18 +158,18 @@ progress[value]::-webkit-progress-value {
 }
 
 .accountLeftOver {
-    font-size: 30px;
+    font-size: 1.5em;
     color: black;
      font-family: 'Droid Serif', serif;
     float: right;
-    margin-right: 80px;
+    margin-right: 11%;
     padding-top: 10px;
    
       
 }
 
 #accountToGo {
-    font-size: 25px;
+  
     color: black;
     margin-left: 7px;
     font-style: italic;
@@ -217,11 +219,11 @@ progress[value]::-webkit-progress-value {
 
 #newBudgetBtn {
    
-    width: 40%;
+    width: 225px;
     background-color: #00cc99;
     border: none;
     border-radius: 2px;
-    margin-top: 3%;
+    margin-top: 15px;
  
   
     
@@ -259,15 +261,15 @@ progress[value]::-webkit-progress-value {
 }
 
 #newGoalBtn {
-    width: 40%;
-    
+    width: 225px;
+    margin-top: 15px;
     background-color: #80bfff;
     border: none;
     border-radius: 2px;
     
  
    
-    margin-top: 3%;
+    margin-top: 15px;
 }
 
 /*Main Bars*/
@@ -305,7 +307,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .budgetTitle {
-    font-size: 30px;
+    font-size: 1.7em;
     padding-top: 15px;
     margin-left: 20px;
    font-family: 'Questrial', sans-serif;
@@ -342,7 +344,7 @@ progress[value]::-webkit-progress-value {
 
 
 .budgetP {
-    font-size: 25px;
+    font-size: 1.45em;
     color: black;
     margin-left: 0px;
     float: left;
@@ -359,9 +361,9 @@ progress[value]::-webkit-progress-value {
 }
 
 .progressP {
-    font-size: 30px;
+    font-size: 1.5em;
     color: black;
-    margin-left: 20px;
+    margin-left: 25px;
     
     padding-top: 10px;
     float: left;
@@ -369,18 +371,18 @@ font-family: 'Droid Serif', serif;
 
 }
 .of {
-    font-size: 25px;
+   
     color: black;
     font-style:italic;
     margin-right: 2px;
 }
 
 .mainDivLeftOver {
-    font-size: 25px;
+    font-size: 1.45em;
     color: black;
     float: right;
    
-    margin-right: 40px;
+    margin-right: 5%;
     padding-top: 10px;
     font-family: 'Droid Serif', serif; 
 }
@@ -500,12 +502,12 @@ font-family: 'Droid Serif', serif;
 }
 
 .goalToGo {
-    font-size: 25px;
+    font-size: 1.45em;
     color: black;
     
     padding-top: 10px;
     float: right;
-    margin-right: 40px;
+    margin-right: 7%;
     font-family: 'Droid Serif', serif;
     
 }
@@ -556,6 +558,33 @@ font-family: 'Droid Serif', serif;
     color: black;
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+    
+
+    .accountOverallDiv {
+        margin-left: 0px;
+    }
+
+    .progressP {
+        margin-left: 5px;
+    }
+
+   .newIncome {
+       margin-left: 40px;
+   }
+
+   .accountBars {
+       width: 85%;
+   }
+
+   #goalBar {
+       width: 85%;
+   }
+   
+}
+
+
 
 
 

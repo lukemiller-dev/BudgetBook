@@ -1,5 +1,23 @@
 
+<script>
+ 
+    $(document).ready(function () {
+    });
+    $(window).scroll(function () {
+     
 
+        if ($(window).scrollTop() > 40) {
+
+            $('.homeNavBar').addClass('backgroundChange');
+
+        } else {
+
+            $('.homeNavBar').removeClass('backgroundChange');
+
+        };
+    });
+
+</script>
     <div id="main">
 
 
@@ -7,7 +25,7 @@
         <div class="header">
           
             <div class="homeLayer">
-                <nav id="homeNavBar" class="navbar navbar-inverse">
+                <nav class="homeNavBar transition navbar navbar-fixed-top">
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" ng-show="controller.sideIcon" ng-click="controller.openNav()" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -16,7 +34,7 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <a class="navbar-brand" href="/"><img height="125" id="homeNavLogo" src="http://i.imgur.com/JMev8ED.png" /></a>
+                            <a class="navbar-brand" href="/"><img id="homeNavLogo" src="http://i.imgur.com/JMev8ED.png" /></a>
 
                             <!--<a ng-show="controller.sideIcon" id="homeNavTitle" href="/">BudgetBook</a>-->
 
@@ -24,12 +42,19 @@
                         <div class="collapse navbar-collapse" id="myNavbar">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a id="userNameAccount" href="#" ng-show="account.isLoggedIn()">{{account.getUserName()}}</a></li>
-                                <li><a id="navLogout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
+                                <li><a id="userNameHome" href="/mainAccount" ng-show="account.isLoggedIn()">{{account.getUserName()}}</a></li>
+                                <li><a id="navLogout"  ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
 
 
-                                <li ng-show="!account.isLoggedIn()" class="homeNavLi"><button ng-show="controller.sideIcon" id="homeLogin" ng-click="account.openModal()"><i id="navIconsSmall" class="fa fa-lock" aria-hidden="true"></i>Login</button></li>
-                                <li ng-show="controller.sideIcon"><button ng-show="!account.isLoggedIn()" id="homeRegister" class="signUpBtn" onclick="location.href='/register'" type="button"><i id="navIconsSmall" class="fa fa-user" aria-hidden="true"></i>Sign Up</button></li>
+                                <li ng-show="!account.isLoggedIn()" class="homeNavLi"><button ng-show="controller.sideIcon" id="homeLogin" ng-click="account.openModal()"><i id="navIconsSmall" class="fa fa-lock" aria-hidden="true"></i>Log In</button></li>
+                                <li ng-show="controller.sideIcon">
+                                <div class="view overlay hm-red-strong">
+                                <button ng-show="!account.isLoggedIn()" id="homeRegister" class="signUpBtn hoverable" onclick="location.href='/register'" type="button"><i id="navIconsSmall" class="fa fa-user" aria-hidden="true"></i>Sign Up</button>
+                                    <div class="mask">
+
+                                    </div>
+                                    </div>
+                                    </li>
                                 <li><i id="collapseMenu" type="button" class="fa fa-bars" aria-hidden="true" ng-show="controller.sideIcon" ng-click="controller.openNav()"></i></li>
                             </ul>
                          
@@ -48,14 +73,14 @@
                         <img src="http://i.imgur.com/71UPSMt.png" height="22" id="closeOption" ng-click="controller.closeNav()" class="fa fa-times" aria-hidden="true" />
 
                         <div id="userNameDiv" ng-show="account.isLoggedIn()">
-                            <p id="userName" ng-show="account.isLoggedIn()">{{account.getUserName()}}</p>
+                            <p id="userName" ng-show="account.isLoggedIn()">{{account.getUserName()}}</a>
                             <p>{{account.validationMessages}}</p>
                         </div>
 
 
 
 
-                        <button class="sideLoginBtn" ng-click="account.openModal()" ng-show="!account.isLoggedIn()">Login</button>
+                        <button class="sideLoginBtn" ng-click="account.openModal()" ng-show="!account.isLoggedIn()">Log In</button>
                         <a ng-show="!account.isLoggedIn()" href="/register">Register</a>
                         <a href="/mainAccount" ng-show="account.isLoggedIn()">Account</a>
                         <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
@@ -63,24 +88,30 @@
 
 
                     </div>
-                    <!-- Use any element to open the sidenav -->
+                    <div class="button">
+                        <div class="icon">
+                            <div class="line line-1"></div>
+                            <div class="line line-2"></div>
+                            <div class="line line-3"></div>
+                        </div>
+                    </div>
 
                     <center>
                         <div class="row">
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
 
                                 <!--<img data-aos="fade-down" data-aos-duration="1000" height="350" src="http://i.imgur.com/JMev8ED.png" id="mainLogo" />-->
                                 <h1>BudgetBook</h1>
 
-                                <h2 data-aos="fade-down" data-aos-duration="1000">Helping you put a leash on your budget</h2>
+                                <h2 data-aos="fade-down" data-aos-duration="1000">Helping you put your finances on the right path.</h2>
 
                                 <button data-aos="fade-down" data-aos-duration="1000" onclick="location.href='/register'" class="headerBtn">Get Started</button>
                                 <div class="row">
                                     <table>
                                         <tr>
-                                            <td><img data-aos="fade-left" data-aos-duration="2000" class="compImg" src="http://i.imgur.com/xpKiv38.png" /></td>
-                                            <td><img data-aos="fade-up" data-aos-duration="2000" class="phoneImg" src="http://i.imgur.com/60WCUzs.png" /></td>
+                                            <td><img data-aos="fade-left" data-aos-duration="2000" class="compImg" src="http://i.imgur.com/0jI19HH.png" /></td>
+                                            <td><img data-aos="fade-up" data-aos-duration="2000" class="phoneImg" src="http://i.imgur.com/q7faOsK.png" /></td>
 
                                         </tr>
                                     </table>
@@ -114,7 +145,7 @@
                     </div>
                     <div class="row">
 
-                        <div data-aos="fade-up-right" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div data-aos="fade-up-right" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="catDiv">
                                 <i class="glyphicon glyphicon-folder-open" id="folder"></i>
                                 <p id="iconHeadersCat">Categories</p>
@@ -122,7 +153,7 @@
                             </div>
                         </div>
 
-                        <div data-aos="fade-up-left" class="col-lg-6 col-md-6 co-sm-6 col-xs-6">
+                        <div data-aos="fade-up-left" class="col-lg-6 col-md-6 co-sm-12 col-xs-12">
                             <div class="goalDivMidSec">
                                 <i class="glyphicon glyphicon-piggy-bank" id="piggy"></i>
                                 <p class="iconHeaders">Goals</p>
@@ -147,7 +178,7 @@
 
 
 
-                <hr />
+                <hr class="footerS"/>
 
                 <p id="contactInfoTop" class="contactInfo">240 Seven Farms Drive</p>
                 <p class="contactInfo">Charleston, SC 29492</p>

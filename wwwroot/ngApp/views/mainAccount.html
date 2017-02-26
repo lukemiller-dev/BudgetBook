@@ -3,9 +3,9 @@
 <div class="container-fluid">
 
 <nav id="mainAccountNav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container">
+			<div class="container-fluid">
          <div class="navbar-header">
-             <a href="/"><img height="100" id="navIconAccount" src="http://i.imgur.com/JMev8ED.png" /></a>
+             <a href="/"><img height="45" id="navIconAccount" src="http://i.imgur.com/JMev8ED.png" /></a>
              <a href="/" class="navTitleLink">BudgetBook</a>
       <button ng-click="controller.openCollapse()" ng-show="controller.menuOption" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -20,7 +20,7 @@
 				<ul class="nav navbar-nav">
                     <li><a href="/mainAccount" ng-show="!account.isLoggedIn()">Account</a></li>
                     <li><a id="userNameAccount" href="#" ng-show="account.isLoggedIn()">{{account.getUserName()}}</a></li>
-                    <li><a id="navLogout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
+                    <li><a id="navLogoutAccount" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
 				</ul>
 			</div>
         </div>
@@ -50,9 +50,7 @@
 
     <div id="mainAccountMain" class="mainAccountMain">
         
-            <div class="container">
-
-                    
+            <div class="container">                   
                     <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
@@ -64,16 +62,13 @@
                                     <li class="progressP">${{controller.appUserIncome.spent}} <span class="of">of</span> ${{controller.appUserIncome.monthlyIncomeFixed}}</li>
                                     <li class="accountLeftOver">${{controller.appUserIncome.currentTotal}}<span id="accountToGo">left</span></li>
 
-                                </ul>
-                              
-                              
-                                           
+                                </ul>                                          
                                         <progress class="accountOverallDiv" value="{{controller.appUserIncome.spent}}" max="{{controller.appUserIncome.monthlyIncomeFixed}}" style="color: #fff; background-color: #fff;"></progress>
                                   
                                 <table>
                                     <tr>
                                         <td><input ng-model="controller.monthlyIncome" class="newIncome" placeholder="New Income" type="number" /><button ng-click="controller.addIncome(income)" class="newIncomeBtn"><i class="fa fa-plus" aria-hidden="true" id="incomeIcons"></i></button></td>
-                                        <td><input ng-model="controller.eIncome" class="editIncome" placeholder="Edit Income" type="number" /><button class="newIncomeBtn"><i ng-click="controller.editIncome()" class="fa fa-pencil" id="incomeIcons" aria-hidden="true"></i></button></td>
+                                        <!--<td><input ng-model="controller.eIncome" class="editIncome" placeholder="Edit Income" type="number" /><button class="newIncomeBtn"><i ng-click="controller.editIncome()" class="fa fa-pencil" id="incomeIcons" aria-hidden="true"></i></button></td>-->
                                     </tr>
                                 </table>
                             </div>
@@ -96,6 +91,7 @@
                         <div ng-repeat="budget in controller.maBudgets" class="mainBudgets">
                             <i id="budgetIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteBudget(budget.id)"></i>
                             <p class="budgetTitle">{{budget.name}}</p>
+                            <!--<button ng-click="controller.editBudgetModal()">Edit</button>-->
                             <ul class="budgetLists">
                                    <li class="budgetP">${{budget.current}} <span class="mainOf">of</span> ${{budget.amount}}</li>
                                     <li class="mainDivLeftOver">${{budget.remaining}}<span id="mainDivToGo">left</span></li>
@@ -110,13 +106,13 @@
                                     <td>
                                         <i ng-hide="controller.addIcon" class="fa fa-plus" aria-hidden="true" id="addNminusIcons1" ng-click="controller.addToCurrent(budget.id)"></i>
                                     </td>
-                                    <td>
-                                        <input ng-keyup="$event.keyCode == 13 && controller.addToCurrent(budget.id)" ng-hide="controller.hideAddInput" class="addNminusFields" placeholder="Add" ng-model="controller.current" />
+                                    <td ng-hide="controller.hideAddInput">
+                                        <input ng-keyup="$event.keyCode == 13 && controller.addToCurrent(budget.id)" class="addNminusFields" placeholder="Add" ng-model="controller.current" />
 
                                     </td>
                               
-                                    <td ng-click="controller.subtractCurrent(budget.id)">
-                                        <i ng-click="controller.moveSubtractIcon()" ng-hide="controller.subtractIcon" class="fa fa-minus" aria-hidden="true" id="addNminusIcons2" ></i>
+                                    <td>
+                                        <i ng-click="controller.subtractCurrent(budget.id)" ng-hide="controller.subtractIcon" class="fa fa-minus" aria-hidden="true" id="addNminusIcons2" ></i>
                                     </td>
                                     <td>
                                         <input ng-keyup="$event.keyCode == 13 && controller.subtractCurrent(budget.id)" ng-hide="controller.hideSubtractInput" class="addNminusFields" placeholder="Subtract" ng-model="controller.sCurrent" />
@@ -142,6 +138,7 @@
                         
                         <div ng-repeat="goal in controller.goals" class="mainGoals">
                             <p class="budgetTitle">{{goal.name}}</p>
+                           
                             <ul class="budgetLists">
                                 <li><i id="goalIconDelete" class="fa fa-times" aria-hidden="true" ng-click="controller.deleteGoal(goal.id)"></i></li>
                                               

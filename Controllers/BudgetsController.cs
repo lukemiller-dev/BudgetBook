@@ -55,6 +55,12 @@ namespace newBudgetBook.Controllers
             _service.SubtractCurrentAmount(budgetId, amount);
         }
 
+        //Edit Budget 
+        [HttpPost("editedBudget/{budgetId}")]
+        public void Post(int budgetId, [FromBody]string name, decimal amount, decimal current)
+        {
+            _service.EditBudget(budgetId, name, amount, current);
+        }
 
         [HttpDelete("{id}")]
         public void Delete(int id)

@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a href="/"><img height="100" id="navIconAccount" src="http://i.imgur.com/JMev8ED.png" /></a>
-            <a href="/" class="navTitleLink">BudgetBook</a>
+            <a href="/"><img id="navIconRegister" src="http://i.imgur.com/JMev8ED.png" /></a>
+            <a href="/" id="navTitleLinkRegister">BudgetBook</a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -23,10 +23,10 @@
 <div class="form-group">
     <div class="row">
 
-        <div class="col-md-2">
+        <div class="col-md-2 col-lg-2">
 
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
             <!--<div class="socialLogin">
                 <fieldset>
                     <h4>Login with a Social Provider</h4>
@@ -46,14 +46,18 @@
             <div class="localLogin">
                 <fieldset>
 
-                    <p class="loginHeader">Start saving today.</p>
-                    <ul>
+                  
+                    <ul class="loginListTop">
+                     
                         <li ng-repeat="message in controller.validationMessages">
                             {{message}}
                         </li>
                     </ul>
 
                     <form class="form-inline" ng-submit="controller.register()">
+                        <div>
+                            <p class="loginHeader">Start saving today.</p>
+                        </div>
                         <div>
                             <input class="loginInput" placeholder="Username" ng-model="controller.registerUser.userName" />
                         </div>
@@ -68,13 +72,13 @@
                         <div>
                             <input type="password" class="loginInput" placeholder="Confirm Password" ng-model="controller.registerUser.confirmPassword" />
                         </div>
-                        <button type="submit" class="loginBtn">Sign Up</button>
-                        <a class="loginQuestion" ng-click="account.openModal()">Have an account? Log In</a>
+                        <button type="submit" class="loginBtn">Sign Up</button><br />
+                        <a class="loginQuestion" ng-click="account.openModal()">Have an account? Cick me!</a>
                     </form>
                 </fieldset>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-lg-2">
         </div>
 
     </div>

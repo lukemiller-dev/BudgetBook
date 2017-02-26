@@ -28,8 +28,9 @@ body {
 #userName {
     font-size: 26px;    
     font-family: 'Questrial', sans-serif;
-    color: #80bfff;
+    color: #fff;
     margin-top: 15px;
+    border-bottom: 2px solid #fff;
 
 }
 
@@ -50,7 +51,8 @@ body {
     width: 0;
     position: fixed;
     
-   
+   z-index: 2;
+
     top: 0;
     right: 0;    
     background-color: lightslategray;
@@ -74,6 +76,7 @@ body {
     font-family: 'Questrial', sans-serif;
     width: 100px;
     margin-top: 15px;
+    outline: none;
 }
 
 .sidenav a {
@@ -119,16 +122,16 @@ body {
 }
 
     .header h1 {
-        margin-top: 50px;
+        margin-top: 110px;
         color: #fff;
-        font-size: 55px;       
+        font-size: 3.5em;       
         font-family: 'Raleway', sans-serif;
     }
 
     .header h2 {
         margin-top: 30px;
         color: #fff;
-        font-size: 40px;       
+        font-size: 2.5em;       
         font-family: 'Raleway', sans-serif;
     }
 
@@ -214,7 +217,7 @@ body {
     height: 1175px; 
     background-repeat: no-repeat;
     background-color: #fff;
-    background-image: url(http://i.imgur.com/8tZbDqi.jpg);
+    background-image: url(http://i.imgur.com/puSPi0T.jpg);
   /*position: relative;*/
         top: 0;
         left: 0;
@@ -237,7 +240,7 @@ body {
        /*position: relative;*/
         background-repeat: no-repeat;
         background-color: #fff;
-        background-image: url(http://i.imgur.com/8tZbDqi.jpg);
+        background-image: url(http://i.imgur.com/puSPi0T.jpg);
         background-size: cover;
         top: 0;
         left: 0;
@@ -299,7 +302,7 @@ body {
 
 .midSecLayer {
      background-color:rgba(0,0,0,0.5);
-     height: 700px;
+     height: 100%;
      width: 100%;
 }
 
@@ -314,27 +317,37 @@ body {
 .midSec {
     height: 700px;
     text-align: center;
-    background-image: url("http://i.imgur.com/e49jTl1.png?1");
+    background-image: url("http://i.imgur.com/Ure2VAx.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center 0;
 }
 
-@media screen and (min-width: 800px) {
+
+
+@media (max-width: 800px) {
     .midSec {
-        height: 700px;
-        text-align: center;
-        background-image: url("http://i.imgur.com/e49jTl1.png?1");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        height: 1200px;
+
     }
+
+    .goalDivMidSec {
+    margin-left: 0;
+}
+
+    .catDiv {
+    margin-right: 0;
+}
+
+ 
+
+
 }
 
 .midSec h3 {
     margin-top: 100px;
-    font-size: 45px;
+    font-size: 3.5em;
     color: #fff;
     text-align: center;
     font-family: 'Raleway', sans-serif;
@@ -342,7 +355,7 @@ body {
 
 
 #midsecPs {
-    font-size: 26px;
+    font-size:1.8em;
     color: #fff;
     font-family: 'Questrial', sans-serif;
     margin-top: 10px;
@@ -418,3 +431,6 @@ body {
 #copyrightP {
     font-family: 'Questrial', sans-serif;
 }
+
+
+

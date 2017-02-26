@@ -18,10 +18,15 @@ namespace newBudgetBook.Models
             get
             {
                 var total = 0m;
+
+               
                 foreach (var s in Budgets)
                 {
-                    total += s.Current + AddedToGoal;
+                    
+                    total += (s.Current + AddedToGoal);
                 }
+
+               
 
                 return total;
             }           
