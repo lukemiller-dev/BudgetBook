@@ -14,7 +14,7 @@ namespace newBudgetBook.Controllers {
         public openNav() {
             this.sideIcon = false;
             console.log("Test");                     
-            document.getElementById("sidenav").style.width = "300px"; 
+            document.getElementById("sidenav").style.width = "230px"; 
         
             document.getElementById("homeNavBar").style.marginRight = "300px";
        

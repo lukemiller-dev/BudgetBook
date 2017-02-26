@@ -96,6 +96,7 @@ progress[value]::-webkit-progress-value {
     margin-top: 0px;
     height: auto;
     padding-bottom: 70px;
+    margin-top: -20px;
 }
 
 .mainCategories {
@@ -108,7 +109,7 @@ progress[value]::-webkit-progress-value {
 
 
 .overallIncome {
-    margin-top: 100px;
+    margin-top: 40px;
     border-radius: 5px;
     height:auto;
     width: 100%;
@@ -581,6 +582,11 @@ font-family: 'Droid Serif', serif;
    #goalBar {
        width: 85%;
    }
+
+   .mainAccountMain {
+       padding-bottom: 150px;
+   }
+
    
 }
 

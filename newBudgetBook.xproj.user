@@ -3,6 +3,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <ShowAllFiles>true</ShowAllFiles>
-    <NameOfLastUsedPublishProfile>betaBudgetBook - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>budgetbook - Web Deploy %282%29</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
