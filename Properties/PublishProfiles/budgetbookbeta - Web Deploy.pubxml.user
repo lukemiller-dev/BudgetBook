@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGij3lCJv7ES806aMoORDPAAAAAACAAAAAAAQZgAAAAEAACAAAABZfo85uodd6UA+478LMkEQAL0nZWsODIeQ+E/RM+gCyAAAAAAOgAAAAAIAACAAAAAchF5RNnpEnv2v8L83gri3xRh7k2voTM3XRBJyEb4ly4AAAAAVBan+CWRWpQBb77BLNUYDrV2LskqI4OADlcDja9q+ynK9fgu08pbEhKbh9T9nMiAus9dj0jN38RYeGYTvKJH0dI+vayC+b0+ukKY4DyC3DUC2RHX+SnXt+DB70vUumE3tFaL9sdrStUJqdpxQLpTc6bobo0+o9AgT7FPji7AKzEAAAAD9Er7oLtiSdUdiei/PJnWTC6M5/FusELYwf9anQIakToNXSN6Ie+JMwVsrLH39d3FRLaGcYNtD6iE1OG08pbT8</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:budgetbookbetadbserver.database.windows.net,1433;Initial Catalog=budgetbookbeta_db;User Id=lukemill@budgetbookbetadbserver;Password=Lm548501!</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="newBudgetBook.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:budgetbookbetadbserver.database.windows.net,1433;Initial Catalog=budgetbookbeta_db;User Id=lukemill@budgetbookbetadbserver;Password=Lm548501!</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

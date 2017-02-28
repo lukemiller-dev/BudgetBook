@@ -28,8 +28,10 @@ namespace newBudgetBook.Services
                             Id = u.Id,
                             MonthlyIncome = u.MonthlyIncome,
                             MonthlyIncomeFixed = u.MonthlyIncomeFixed,
-                            AddedToGoal = u.AddedToGoal,
-                            
+                            //AddedToGoal = u.AddedToGoal,
+                           
+
+
                             Budgets = (from b in u.Budgets
                                        select new BudgetDTO
                                        {
@@ -48,10 +50,17 @@ namespace newBudgetBook.Services
                                 EndDate = g.EndDate
                             }).ToList()
                         }).FirstOrDefault();
-            
+
             user.CurrentTotal = user.MonthlyIncome - user.Budgets.Sum(t => t.Current);
-            user.Spent = user.Budgets.Sum(s => s.Current + user.AddedToGoal);
+            user.Spent = user.MonthlyIncomeFixed - user.CurrentTotal;
+
+            //user.CurrentTotal = user.MonthlyIncome - user.Budgets.Sum(t => t.Current);
+            ////user.Spent = user.Budgets.Sum(s => s.Current + user.AddedToGoal);
+            //user.Spent = user.MonthlyIncome - user.CurrentTotal;
             
+
+
+
             return user;
         }
 

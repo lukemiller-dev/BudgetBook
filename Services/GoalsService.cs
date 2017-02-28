@@ -92,8 +92,8 @@ namespace newBudgetBook.Services
             var thisGoal = _repo.GetGoalById(goalId);
             thisGoal.Current += amount;
             thisGoal.AppUser.MonthlyIncome -= amount;
-                     
-           
+
+
             thisGoal.AppUser.AddedToGoal += amount;
             _repo.Update(thisGoal);
             

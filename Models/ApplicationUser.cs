@@ -14,38 +14,10 @@ namespace newBudgetBook.Models
         public decimal MonthlyIncome { get; set; }
         public decimal MonthlyIncomeFixed { get; set; }
         public decimal AddedToGoal { get; set; }
-        public decimal Spent {
-            get
-            {
-                var total = 0m;
+        public decimal Spent { get; set; }
+        public decimal CurrentTotal { get; set; }
 
-               
-                foreach (var s in Budgets)
-                {
-                    
-                    total += (s.Current + AddedToGoal);
-                }
 
-               
-
-                return total;
-            }           
-        }
-
-        public decimal CurrentTotal
-        {
-            get
-            {
-                var total = 0m;
-                foreach (var t in Budgets)
-                {
-                    total = MonthlyIncome - t.Current;
-                }
-                return total;
-            }
-        }
-
-       
         public ICollection<Budget> Budgets { get; set; }
         public ICollection<Goal> Goals { get; set; }
     }

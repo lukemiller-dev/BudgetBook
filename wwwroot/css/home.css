@@ -236,7 +236,7 @@ body {
 @media screen and (min-width: 800px) {
 
     .header {
-        height: 850px;
+        height: 900px;
        /*position: relative;*/
         background-repeat: no-repeat;
         background-color: #fff;
@@ -251,7 +251,7 @@ body {
 
      .homeLayer {
         background-color: rgba(243,243,243,0.2);
-        height: 850px;
+        height: 100%;
     }
 }
 

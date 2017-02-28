@@ -8,9 +8,10 @@ using newBudgetBook.Data;
 namespace newBudgetBook.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170226204932_fixSpent")]
+    partial class fixSpent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -134,8 +135,6 @@ namespace newBudgetBook.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<decimal>("CurrentTotal");
-
                     b.Property<string>("Email")
                         .HasAnnotation("MaxLength", 256);
 
@@ -166,8 +165,6 @@ namespace newBudgetBook.Migrations
                     b.Property<bool>("PhoneNumberConfirmed");
 
                     b.Property<string>("SecurityStamp");
-
-                    b.Property<decimal>("Spent");
 
                     b.Property<bool>("TwoFactorEnabled");
 

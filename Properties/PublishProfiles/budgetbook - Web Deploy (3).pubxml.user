@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGij3lCJv7ES806aMoORDPAAAAAACAAAAAAAQZgAAAAEAACAAAABRa274gu/7yZ4czCkeZbROjKARQ3KvdE4MGix8du0ozQAAAAAOgAAAAAIAACAAAAADQyBPqY351YNn4S1eYfDBsB46a/7do3mXaAr6ClHnRIAAAACgNQYoQULr9WLbGHwiMO1afdou1fp+IKY8gP8R3kBcWDoXKzml3DJMnoSKgpibKr34ZHQ/xBKEiNBAIAePKXVn+ZaLq6ocRctjZjjshYuvyuGtPtmShTC16mwJyMojhBzDYsKgK/CrpMwE2HoFq+llyMcVfoZ6pNzf/J+nylZ2HUAAAADOK0UMpjX6ldeFx9kXbvadknx/xuxBCkmrOr/v1IPe81iHafgSLriSUI9BAgNymwznmgDbmDkt00TDNAeR2QC4</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:responsivebudgetbookdbserver.database.windows.net,1433;Initial Catalog=budgetbook_db;User Id=lukemill@responsivebudgetbookdbserver;Password=Lm548501!</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="newBudgetBook.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:responsivebudgetbookdbserver.database.windows.net,1433;Initial Catalog=budgetbook_db;User Id=lukemill@responsivebudgetbookdbserver;Password=Lm548501!</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>
